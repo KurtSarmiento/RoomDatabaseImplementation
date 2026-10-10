@@ -21,27 +21,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val viewModel: StudentViewModel = viewModel()
+            Room_database_discussionTheme {
+                val viewModel: StudentViewModel = viewModel()
 
-            StudentScreen(
-                viewModel = viewModel
-            )
+                StudentScreen(viewModel = viewModel)
+            }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Room_database_discussionTheme {
-        Greeting("Android")
     }
 }
